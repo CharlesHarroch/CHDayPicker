@@ -18,67 +18,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nk-j8-TxI" customClass="CHDayPicker" customModule="CHDayPicker">
-                                <rect key="frame" x="209" y="63" width="182" height="36"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="35x-Og-Lwk"/>
-                                    <constraint firstAttribute="height" constant="36" id="fJ5-ra-Ai9"/>
-                                    <constraint firstAttribute="width" constant="182" id="p4T-BG-9Ts"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
-                                        <color key="value" red="0.7019608021" green="0.0" blue="0.13333334029999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="singleSelection" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm4-oz-EHZ">
                                 <rect key="frame" x="20" y="136" width="560" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BoM-gN-Fyi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O42-mE-XXd" customClass="CHDayPicker" customModule="CHDayPicker">
+                                <rect key="frame" x="180" y="57" width="240" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="V6N-Hu-w9a"/>
+                                    <constraint firstAttribute="height" constant="42" id="eZf-8V-iDd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" red="0.7019608021" green="0.0" blue="0.13333334029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="defaultSelectedDay">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ber-Ba-Ykt">
+                                <rect key="frame" x="249" y="245" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-5e-VFq">
                                 <rect key="frame" x="260" y="107" width="80.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KMR-5e-VFq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="4es-oy-FjM"/>
-                            <constraint firstItem="0nk-j8-TxI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="43" id="B64-5U-KX0"/>
-                            <constraint firstItem="0nk-j8-TxI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="Dd2-HV-yDZ"/>
                             <constraint firstItem="bm4-oz-EHZ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="IaN-ie-iw4"/>
                             <constraint firstItem="bm4-oz-EHZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MoO-Lz-vbu"/>
                             <constraint firstItem="bm4-oz-EHZ" firstAttribute="top" secondItem="KMR-5e-VFq" secondAttribute="bottom" constant="8" id="PMr-8L-3vD"/>
-                            <constraint firstItem="0nk-j8-TxI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ccH-CE-F9m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0nk-j8-TxI" secondAttribute="trailing" constant="348" id="gxj-10-WeA"/>
-                            <constraint firstItem="KMR-5e-VFq" firstAttribute="top" secondItem="0nk-j8-TxI" secondAttribute="bottom" constant="8" id="yZM-Jr-82z"/>
+                            <constraint firstItem="KMR-5e-VFq" firstAttribute="top" secondItem="O42-mE-XXd" secondAttribute="bottom" constant="8" id="Ww6-gt-416"/>
+                            <constraint firstItem="O42-mE-XXd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="37" id="eYW-Dn-Gug"/>
+                            <constraint firstItem="O42-mE-XXd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ef4-a9-Tjj"/>
+                            <constraint firstItem="KMR-5e-VFq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="p7W-eY-Ze6"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Dd2-HV-yDZ"/>
-                                <exclude reference="gxj-10-WeA"/>
+                            <mask key="subviews">
+                                <exclude reference="ber-Ba-Ykt"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="dayPicker" destination="0nk-j8-TxI" id="1SQ-P7-6jI"/>
+                        <outlet property="dayPicker" destination="O42-mE-XXd" id="DpI-fe-Epb"/>
                         <outlet property="resultLabel" destination="bm4-oz-EHZ" id="how-Sr-zib"/>
                     </connections>
                 </viewController>

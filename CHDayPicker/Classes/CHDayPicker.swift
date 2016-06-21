@@ -16,7 +16,7 @@ public protocol CHDayPickerDelegate : class {
     
     public weak var delegate : CHDayPickerDelegate?
     
-    public var daysLabel  = ["L", "M", "M" , "J", "V", "S", "D"] {
+    public var daysLabel  = ["S", "M", "T" , "W", "T", "F", "S"] {
         didSet {
             setupView()
         }
@@ -24,11 +24,10 @@ public protocol CHDayPickerDelegate : class {
     
     // MARK : IBDesignable Declaration
     
-    @IBInspectable var defaultSelectedDay : Int = -1 { didSet { self.selectDayAtPosition(defaultSelectedDay) } }
+    @IBInspectable public var defaultSelectedDay : Int = -1 { didSet { self.selectDayAtPosition(defaultSelectedDay) } }
     @IBInspectable public var singleSelection : Bool = false
     @IBInspectable public var titleColor : UIColor = UIColor.blackColor()
     @IBInspectable public var selectedBackgroundColor : UIColor = UIColor.clearColor()
-    @IBInspectable public var titleBackgroundColor : UIColor = UIColor.clearColor()
     @IBInspectable public var selectedTitleColor : UIColor = UIColor.whiteColor()
     
     // MARK : Private property
@@ -54,13 +53,17 @@ public protocol CHDayPickerDelegate : class {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        /*
         self.daysButton.forEach { tuple in
             let itemWidth = CGFloat(self.bounds.width) / CGFloat(daysLabel.count)
             let itemHeight = self.bounds.height
-            tuple.button.frame = CGRectMake(CGFloat(tuple.button.tag) * itemWidth, 0, itemWidth, itemHeight)
+            tuple.button.setTitleColor(titleColor, forState: .Normal)
+            tuple.button.frame = CGRect(x:CGFloat(tuple.button.tag) * itemWidth,y: 0,width:  itemWidth,height: itemHeight)
             let minSize = min(tuple.button.frame.size.width, tuple.button.frame.size.height)
-            tuple.selectedLayer.frame = CGRectMake(tuple.button.frame.size.width/2 - minSize/2, tuple.button.frame.size.height/2 - minSize/2 , minSize, minSize)
+            tuple.selectedLayer.frame = CGRect(x:tuple.button.frame.size.width/2 - minSize/2, y: tuple.button.frame.size.height/2 - minSize/2 , width: minSize,height: minSize)
         }
+         */
+        setupView()
     }
     
     public func setupView() {
@@ -93,7 +96,11 @@ public protocol CHDayPickerDelegate : class {
     private func configureButton(tuple : CHButton, title : String, position : Int) {
         tuple.button.setTitle(title, forState: UIControlState.Normal)
         tuple.button.layer.cornerRadius = self.frame.height/2
-        tuple.button.setTitleColor(titleColor, forState: .Normal)
+        if self.defaultSelectedDay == position {
+            tuple.button.setTitleColor(selectedTitleColor, forState: .Normal)
+        } else {
+            tuple.button.setTitleColor(titleColor, forState: .Normal)
+        }
         tuple.button.addTarget(self, action: #selector(CHDayPicker.selectDay(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         tuple.button.tag = position
         self.addSubview(tuple.button)
@@ -124,21 +131,23 @@ public protocol CHDayPickerDelegate : class {
         case false :
             deselectDayAtPosition(sender.tag)
         }
-        
         self.delegate?.didSelectDay(sender.tag, label: daysLabel[sender.tag], selected: daysButton[sender.tag].selected)
-
     }
     
     public func selectDayAtPosition(position : Int) {
-        self.daysButton[position].selected = true
-        self.daysButton[position].button.setTitleColor(selectedTitleColor, forState: .Normal)
-        self.daysButton[position].selectedLayer.backgroundColor = selectedBackgroundColor.CGColor
+        if self.daysButton.count > position && position >= 0{
+            self.daysButton[position].selected = true
+            self.daysButton[position].button.setTitleColor(selectedTitleColor, forState: .Normal)
+            self.daysButton[position].selectedLayer.backgroundColor = selectedBackgroundColor.CGColor
+        }
     }
     
     public func deselectDayAtPosition(position : Int) {
-        self.daysButton[position].selected = false
-        self.daysButton[position].button.setTitleColor(titleColor, forState: .Normal)
-        self.daysButton[position].selectedLayer.backgroundColor = UIColor.clearColor().CGColor
+        if self.daysButton.count >= position {
+            self.daysButton[position].selected = false
+            self.daysButton[position].button.setTitleColor(titleColor, forState: .Normal)
+            self.daysButton[position].selectedLayer.backgroundColor = UIColor.clearColor().CGColor
+        }
     }
     
     private func setActive(tuple : CHButton) {

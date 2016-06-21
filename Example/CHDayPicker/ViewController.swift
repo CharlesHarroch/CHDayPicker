@@ -17,8 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dayPicker.daysLabel = ["Lun" , "Mar" , "Mer"]
-        self.dayPicker.singleSelection = false
+        self.dayPicker.singleSelection = true
         self.dayPicker.delegate = self
     }
 
