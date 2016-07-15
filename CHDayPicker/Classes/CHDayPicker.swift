@@ -24,7 +24,7 @@ public protocol CHDayPickerDelegate : class {
     
     // MARK : IBDesignable Declaration
     
-    @IBInspectable public var defaultSelectedDay : Int = -1 { didSet { self.selectDayAtPosition(defaultSelectedDay) } }
+    @IBInspectable public var defaultSelectedDay : Int = -1
     @IBInspectable public var singleSelection : Bool = false
     @IBInspectable public var titleColor : UIColor = UIColor.blackColor()
     @IBInspectable public var selectedBackgroundColor : UIColor = UIColor.clearColor()
@@ -53,17 +53,6 @@ public protocol CHDayPickerDelegate : class {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        /*
-        self.daysButton.forEach { tuple in
-            let itemWidth = CGFloat(self.bounds.width) / CGFloat(daysLabel.count)
-            let itemHeight = self.bounds.height
-            tuple.button.setTitleColor(titleColor, forState: .Normal)
-            tuple.button.frame = CGRect(x:CGFloat(tuple.button.tag) * itemWidth,y: 0,width:  itemWidth,height: itemHeight)
-            let minSize = min(tuple.button.frame.size.width, tuple.button.frame.size.height)
-            tuple.selectedLayer.frame = CGRect(x:tuple.button.frame.size.width/2 - minSize/2, y: tuple.button.frame.size.height/2 - minSize/2 , width: minSize,height: minSize)
-        }
-         */
-        setupView()
     }
     
     public func setupView() {
