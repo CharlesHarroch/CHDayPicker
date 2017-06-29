@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHDayPicker'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'CHDayPicker is a custom day picker for iOS'
 
 # This description is used to generate tags and improve search results.
