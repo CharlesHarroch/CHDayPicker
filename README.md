@@ -1,6 +1,6 @@
 # CHDayPicker
 
-[![CI Status](http://img.shields.io/travis/Charles HARROCH/CHDayPicker.svg?style=flat)](https://travis-ci.org/Charles HARROCH/CHDayPicker)
+[![CI Status](https://img.shields.io/travis/Charles%20HARROCH/CHDayPicker.svg?style=flat)](https://travis-ci.org/Charles HARROCH/CHDayPicker)
 [![Version](https://img.shields.io/cocoapods/v/CHDayPicker.svg?style=flat)](http://cocoapods.org/pods/CHDayPicker)
 [![License](https://img.shields.io/cocoapods/l/CHDayPicker.svg?style=flat)](http://cocoapods.org/pods/CHDayPicker)
 [![Platform](https://img.shields.io/cocoapods/p/CHDayPicker.svg?style=flat)](http://cocoapods.org/pods/CHDayPicker)
