@@ -1,10 +1,15 @@
-<<<<<<< HEAD
-# OS X
-.DS_Store
 
-# Xcode
-build/
-=======
+# Created by https://www.gitignore.io/api/swift,cocoapods
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a lage number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
+Pods/
+
+### Swift ###
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -14,7 +19,6 @@ build/
 DerivedData/
 
 ## Various settings
->>>>>>> 5b13ff561499e8ad24e9eb36bde3c20b1edfd628
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,31 +28,11 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-<<<<<<< HEAD
-*.xccheckout
-profile
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-
-# Bundler
-.bundle
-
-Carthage
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
-# 
-# Note: if you ignore the Pods directory, make sure to uncomment
-# `pod install` in .travis.yml
-#
-# Pods/
-=======
 
 ## Other
 *.moved-aside
-*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
 
 ## Obj-C/Swift specific
 *.hmap
@@ -64,16 +48,26 @@ playground.xcworkspace
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
 # Packages/
+# Package.pins
 .build/
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
+# CocoaPods - Refactored to standalone file
 
+# Carthage - Refactored to standalone file
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+### Swift.Carthage Stack ###
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
@@ -81,15 +75,11 @@ playground.xcworkspace
 
 Carthage/Build
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+### Swift.CocoaPods Stack ###
+## CocoaPods GitIgnore Template
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
->>>>>>> 5b13ff561499e8ad24e9eb36bde3c20b1edfd628
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a lage number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
+
+# End of https://www.gitignore.io/api/swift,cocoapods
