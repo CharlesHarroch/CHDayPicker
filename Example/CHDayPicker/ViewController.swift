@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dayPicker.singleSelection = true
+        self.dayPicker.singleSelection = false
         self.dayPicker.delegate = self
+        self.dayPicker.selectDayAtPosition(position: 0)
+        self.dayPicker.selectDayAtPosition(position: 3)
+        self.dayPicker.selectDayAtPosition(position: 5)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +29,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
     }
 }
 

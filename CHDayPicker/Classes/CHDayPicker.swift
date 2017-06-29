@@ -106,7 +106,7 @@ public protocol CHDayPickerDelegate : class {
     @objc private func selectDay(sender : AnyObject) {
         
         if (singleSelection == true) {
-            for (index, element) in daysButton.enumerated() {
+            for (index, _) in daysButton.enumerated() {
                 setInActive(tuple: daysButton[index])
                 daysButton[index].selected = false
             }
@@ -149,8 +149,4 @@ public protocol CHDayPickerDelegate : class {
         tuple.button.setTitleColor(titleColor, for: .normal)
         tuple.selectedLayer.backgroundColor = UIColor.clear.cgColor
     }
-}
-
-extension CHDayPicker {
-    
 }
